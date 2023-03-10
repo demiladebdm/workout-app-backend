@@ -6,10 +6,10 @@ const { loginUser, registerUser } = require('../controllers/userController')
 const router = express.Router();
 
 // Login route
-router.post('/login', loginUser)
+router.post('https://workout-app-api.onrender.com/login', loginUser)
 
 // Signup route
-router.post('/register', registerUser)
+router.post('https://workout-app-api.onrender.com/register', registerUser)
 
 
 module.exports = router;
