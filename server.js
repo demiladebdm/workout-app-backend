@@ -22,7 +22,7 @@ app.use('/api/workouts', workoutRoutes)
 app.use('/api/user', userRoutes)
 
 // connect to db
-mongoose.connect(process.env.URI)
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         // listen for requests
         app.listen(process.env.PORT, () => {
