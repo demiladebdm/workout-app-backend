@@ -4,7 +4,7 @@ const express = require('express')
 const workoutRoutes = require('./routes/workouts')
 const userRoutes = require('./routes/user')
 const mongoose = require('mongoose')
-const cors = require("cors");
+// const cors = require("cors");
 
 
 // express app
@@ -29,11 +29,11 @@ app.use('/api/user', userRoutes)
 // )
 
 // connect to db
-mongoose.connect("mongodb://127.0.0.1/WorkoutApp")
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         // listen for requests
-        app.listen(4000, () => {
-            console.log('Connected to db and listening on port: 4000')
+        app.listen(process.env.PORT, () => {
+            console.log('Connected to db and listening on port: ' + process.env.PORT)
         })
     })
     .catch(err => {
